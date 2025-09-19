@@ -1,0 +1,302 @@
+/**
+ * Birthday Reminder - Frontend Styles
+ * Estilos CSS para a aplicação de lembretes de aniversário
+ * 
+ * Design: Tema escuro com cards brancos
+ * Responsivo: Adaptável para mobile e desktop
+ * Interações: Hover effects e transições suaves
+ * 
+ * @author matheussricardoo
+ * @version 1.0.0
+ */
+
+/* Reset CSS global - remove estilos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui padding e border no cálculo de largura */
+}
+
+/* Estilos base do body */
+body {
+    /* Font stack moderna e compatível */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6; /* Melhora legibilidade */
+    color: #fff; /* Texto branco para contraste no fundo escuro */
+    background: #000; /* Fundo preto para tema escuro */
+    min-height: 100vh; /* Garante altura mínima da viewport */
+}
+
+/* Container principal - centraliza e limita largura */
+.container {
+    max-width: 1200px; /* Largura máxima para telas grandes */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+}
+
+/* Cabeçalho da página */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+/* Título principal */
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300; /* Peso mais leve para elegância */
+    margin-bottom: 10px;
+}
+
+/* Subtítulo (se existir) */
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9; /* Leve transparência */
+}
+
+/* Grid de cards de resumo */
+.summary-cards {
+    display: grid;
+    /* Auto-fit: ajusta automaticamente o número de colunas */
+    /* minmax: mínimo 250px, máximo 1fr (fração disponível) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Espaçamento entre cards */
+    margin-bottom: 40px;
+}
+
+/* Estilo base dos cards */
+.card {
+    background: white; /* Fundo branco contrastando com tema escuro */
+    border-radius: 12px; /* Bordas arredondadas modernas */
+    padding: 30px;
+    text-align: center;
+    /* Sombra sutil para profundidade */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Transição suave para efeitos hover */
+    transition: transform 0.3s ease;
+}
+
+/* Efeito hover nos cards */
+.card:hover {
+    transform: translateY(-5px); /* Eleva o card ao passar mouse */
+}
+
+/* Títulos dos cards */
+.card h2 {
+    color: #666; /* Cinza médio */
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Maiúsculas para destaque */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* Números grandes dos contadores */
+.card div {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Cor específica para card "hoje" */
+.today-card div {
+    color: #000; /* Preto para contraste no fundo branco */
+}
+
+/* Cor específica para card "próximos" */
+.upcoming-card div {
+    color: #000; /* Preto para contraste no fundo branco */
+}
+
+/* Texto descritivo dos cards */
+.card p {
+    color: #999; /* Cinza claro */
+    font-size: 0.9rem;
+}
+
+/* Seção principal com lista de aniversários */
+.birthdays-section {
+    background: white; /* Fundo branco contrastando com tema escuro */
+    border-radius: 12px; /* Bordas arredondadas consistentes */
+    padding: 30px; /* Espaçamento interno generoso */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidade */
+}
+
+/* Título da seção de aniversários */
+.birthdays-section h2 {
+    margin-bottom: 20px;
+    color: #333; /* Cinza escuro para contraste no fundo branco */
+    font-weight: 300; /* Peso leve para elegância */
+}
+
+/* Container dos botões de filtro */
+.filter-tabs {
+    display: flex;
+    gap: 10px; /* Espaçamento entre botões */
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee; /* Linha divisória sutil */
+    padding-bottom: 15px;
+}
+
+/* Estilo base dos botões de filtro */
+.tab-btn {
+    background: none; /* Sem fundo por padrão */
+    border: none; /* Remove bordas padrão do botão */
+    padding: 10px 20px;
+    cursor: pointer; /* Indica que é clicável */
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+    color: #666; /* Cinza médio para botões inativos */
+}
+
+/* Efeito hover nos botões de filtro */
+.tab-btn:hover {
+    background: #f8f9fa; /* Fundo cinza claro ao passar mouse */
+}
+
+/* Estilo do botão de filtro ativo */
+.tab-btn.active {
+    background: #000; /* Fundo preto para destaque */
+    color: white; /* Texto branco para contraste */
+}
+
+/* Container da lista de aniversários */
+.birthdays-list {
+    min-height: 200px; /* Altura mínima para evitar layout shift */
+}
+
+/* Item individual de aniversário */
+.birthday-item {
+    display: flex;
+    justify-content: space-between; /* Distribui espaço entre info e status */
+    align-items: center; /* Alinha verticalmente no centro */
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0; /* Linha divisória entre itens */
+    transition: background 0.3s ease; /* Transição suave para hover */
+}
+
+/* Efeito hover nos itens de aniversário */
+.birthday-item:hover {
+    background: #f8f9fa; /* Fundo cinza claro */
+    margin: 0 -15px; /* Expande o hover além das bordas */
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 6px; /* Bordas arredondadas no hover */
+}
+
+/* Remove borda do último item */
+.birthday-item:last-child {
+    border-bottom: none;
+}
+
+/* Informações do aniversariante (lado esquerdo) */
+.birthday-info h3 {
+    margin-bottom: 5px;
+    color: #333; /* Cinza escuro para o nome */
+    font-weight: 500; /* Peso médio para destaque */
+}
+
+.birthday-info p {
+    color: #666; /* Cinza médio para data de nascimento */
+    font-size: 0.9rem; /* Texto ligeiramente menor */
+}
+
+/* Status do aniversário (lado direito) */
+.birthday-status {
+    text-align: right; /* Alinha texto à direita */
+}
+
+/* Número de dias até o aniversário */
+.birthday-status .days {
+    font-size: 1.1rem;
+    font-weight: bold; /* Destaque para o número de dias */
+    margin-bottom: 5px;
+}
+
+/* Idade que a pessoa fará */
+.birthday-status .age {
+    color: #999; /* Cinza claro para informação secundária */
+    font-size: 0.8rem; /* Texto menor */
+}
+
+/* Cores específicas para diferentes status de aniversário */
+
+/* Aniversário é hoje - vermelho para urgência */
+.status-today .days {
+    color: #e74c3c; /* Vermelho vibrante */
+}
+
+/* Aniversário nos próximos 30 dias - azul para informação */
+.status-upcoming .days {
+    color: #3498db; /* Azul médio */
+}
+
+/* Aniversário distante - cinza para baixa prioridade */
+.status-distant .days {
+    color: #666; /* Cinza médio */
+}
+
+/* Estados da aplicação */
+
+/* Indicador de carregamento */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #666; /* Cinza médio para texto secundário */
+}
+
+/* Mensagem de erro */
+.error {
+    text-align: center;
+    padding: 40px;
+    color: #e74c3c; /* Vermelho para erros */
+    background: #fdf2f2; /* Fundo vermelho muito claro */
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+/* Rodapé da página */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: white; /* Branco para contraste no fundo escuro */
+    opacity: 0.8; /* Leve transparência */
+    font-size: 0.9rem; /* Texto ligeiramente menor */
+}
+
+/* Media Queries - Responsividade para dispositivos móveis */
+/* Aplica estilos para telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    /* Reduz padding do container em telas pequenas */
+    .container {
+        padding: 15px; /* Menos espaçamento para aproveitar melhor o espaço */
+    }
+    
+    /* Reduz tamanho do título principal */
+    header h1 {
+        font-size: 2rem; /* Menor que os 2.5rem padrão */
+    }
+    
+    /* Cards de resumo em coluna única em mobile */
+    .summary-cards {
+        grid-template-columns: 1fr; /* Uma coluna apenas */
+    }
+    
+    /* Layout vertical para itens de aniversário em mobile */
+    .birthday-item {
+        flex-direction: column; /* Empilha elementos verticalmente */
+        align-items: flex-start; /* Alinha à esquerda */
+        gap: 10px; /* Espaçamento entre elementos */
+    }
+    
+    /* Alinha status à esquerda em mobile */
+    .birthday-status {
+        text-align: left; /* Muda de right para left */
+    }
+    
+    /* Permite quebra de linha nos botões de filtro */
+    .filter-tabs {
+        flex-wrap: wrap; /* Botões podem quebrar linha se necessário */
+    }
+}
