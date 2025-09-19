@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configurações básicas da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembretes de Aniversário</title>
+    
+    <!-- Importação do arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Container principal da aplicação -->
+    <div class="container">
+        <!-- Cabeçalho da página -->
+        <header>
+            <h1>Lembretes de Aniversário</h1>
+        </header>
+
+        <!-- Conteúdo principal -->
+        <main>
+            <!-- Cards de resumo com contadores -->
+            <div class="summary-cards">
+                <!-- Card para aniversários de hoje -->
+                <div class="card today-card">
+                    <h2>Hoje</h2>
+                    <div id="today-count">0</div>
+                    <p>aniversários</p>
+                </div>
+                
+                <!-- Card para próximos aniversários -->
+                <div class="card upcoming-card">
+                    <h2>Próximos 30 dias</h2>
+                    <div id="upcoming-count">0</div>
+                    <p>aniversários</p>
+                </div>
+            </div>
+
+            <!-- Seção principal com lista de aniversários -->
+            <div class="birthdays-section">
+                <h2>Todos os Aniversários</h2>
+                
+                <!-- Botões de filtro para diferentes visualizações -->
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-filter="all">Todos</button>
+                    <button class="tab-btn" data-filter="today">Hoje</button>
+                    <button class="tab-btn" data-filter="upcoming">Próximos</button>
+                </div>
+                
+                <!-- Container onde a lista de aniversários será renderizada -->
+                <div id="birthdays-list" class="birthdays-list">
+                    <div class="loading">Carregando...</div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Rodapé da página -->
+        <footer>
+            <p>Projeto Lembretes de Aniversário</p>
+        </footer>
+    </div>
+
+    <!-- Importação do arquivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
