@@ -103,7 +103,7 @@ docker run -d --name backend-container -p 25000:25000 birthday-backend
 # Build frontend image | Build da imagem do frontend
 cd ../frontend
 docker build -t birthday-frontend .
-docker run -d --name frontend-container -p 8080:8080 -e BACKEND_URL=http://10.0.2.208:25000 birthday-frontend
+docker run -d --name frontend-container -p 8080:8080 -e BACKEND_URL=http://SEU_IP_PRIVADO_BACKEND:25000 birthday-frontend
 ```
 
 ### 📁 Project Structure | Estrutura do Projeto
