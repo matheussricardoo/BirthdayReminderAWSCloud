@@ -1,0 +1,37 @@
+# SSH Keys - NEVER commit these!
+*.pem
+*.ppk
+projeto-web-key.pem
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+
+# Arquivos de ambiente
+.env
+.venv
+*.env.*
+
+# VSCode
+.vscode/
+
+# AWS credentials (if any)
+.aws/
+credentials
+config
+
+# Docker
+.dockerignore
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
