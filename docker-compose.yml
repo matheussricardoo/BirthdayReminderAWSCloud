@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: birthday-backend
+    ports:
+      - "25000:25000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: birthday-frontend
+    environment:
+      - BACKEND_URL=http://backend:25000
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
+    restart: unless-stopped
